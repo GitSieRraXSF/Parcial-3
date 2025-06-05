@@ -39,17 +39,17 @@ public class InventarioController {
 
 	@FXML
 	void initialize() {
-		ObservableList<Articulo> availableProductos = FXCollections.observableArrayList();
-		for (Articulo articulo : articuloDAO.fetch()) {
-			availableProductos.add(articulo);
-		}
-		columnAutor.setCellValueFactory(new PropertyValueFactory<>("Autor"));
-		columnAño.setCellValueFactory(new PropertyValueFactory<>("Año"));
-		columnNumPags.setCellValueFactory(new PropertyValueFactory<>("NumPags"));
-		columnTitulo.setCellValueFactory(new PropertyValueFactory<>("Titulo"));
-		tableInventario.setItems(availableProductos);
-		ArrayList<Articulo> articulos = articuloDAO.fetch();
-		LoadTableView(articulos);
+//		ObservableList<Articulo> availableProductos = FXCollections.observableArrayList();
+//		for (Articulo articulo : articuloDAO.fetch()) {
+//			availableProductos.add(articulo);
+//		}
+//		columnAutor.setCellValueFactory(new PropertyValueFactory<>("Autor"));
+//		columnAño.setCellValueFactory(new PropertyValueFactory<>("Año"));
+//		columnNumPags.setCellValueFactory(new PropertyValueFactory<>("NumPags"));
+//		columnTitulo.setCellValueFactory(new PropertyValueFactory<>("Titulo"));
+//		tableInventario.setItems(availableProductos);
+		
+		LoadTableView(articuloDAO.fetch());
 	}
 
 	@FXML
@@ -71,29 +71,29 @@ public class InventarioController {
 	}
 
 	private void LoadTableView(ArrayList<Articulo> productos) {
-		columnAutor.setCellValueFactory(new PropertyValueFactory<>("Autor"));
+		columnAutor.setCellValueFactory(new PropertyValueFactory<>("autor"));
 		columnAutor.setCellFactory(TextFieldTableCell.forTableColumn());
 		columnAutor.setOnEditCommit(event -> {
 			Articulo product = event.getRowValue();
 			product.setAutor(event.getNewValue());
 			articuloDAO.update(product);
 		});
-		columnAño.setCellValueFactory(new PropertyValueFactory<>("Año"));
-		columnAño.setCellValueFactory(new PropertyValueFactory<>("price"));
+		columnAño.setCellValueFactory(new PropertyValueFactory<>("año"));
+		columnAño.setCellValueFactory(new PropertyValueFactory<>("año"));
 		columnAño.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 		columnAño.setOnEditCommit(event -> {
 			Articulo product = event.getRowValue();
 			product.setAño(event.getNewValue());
 			articuloDAO.update(product);
 		});
-		columnNumPags.setCellValueFactory(new PropertyValueFactory<>("NumPags"));
+		columnNumPags.setCellValueFactory(new PropertyValueFactory<>("numPags"));
 		columnNumPags.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 		columnNumPags.setOnEditCommit(event -> {
 			Articulo product = event.getRowValue();
 			product.setNumPags(event.getNewValue());
 			articuloDAO.update(product);
 		});
-		columnTitulo.setCellValueFactory(new PropertyValueFactory<>("Titulo"));
+		columnTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
 		columnTitulo.setCellFactory(TextFieldTableCell.forTableColumn());
 		columnTitulo.setOnEditCommit(event -> {
 			Articulo product = event.getRowValue();
