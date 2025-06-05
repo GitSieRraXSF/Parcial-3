@@ -24,7 +24,10 @@ public class LoginController {
 
 	@FXML
 	void iniciarSesion(ActionEvent event) {
-
+		if (usuarioDAO.authenticate(txtNickname.getText(), txtContraseña.getText())) {
+			Main.loadView("/view/Inventario.fxml");
+		} else {
+			Main.showAlert("Error!", "Usuario Invalido!", "Favor ingrese un usuario valido para entrar.", Alert.AlertType.ERROR);
+		}
 	}
-
 }

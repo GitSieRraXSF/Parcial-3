@@ -1,71 +1,69 @@
 package model;
 
 public class Articulo {
-    private String doi;
-    private String titulo;
-    private String autor;
-    private int año;
-    private int numPags;
-    private boolean estado;
+	private String doi;
+	private String titulo;
+	private String autor;
+	private int año;
+	private int numPags;
+	private boolean estado;
 
+	// Constructor con parámetros
+	public Articulo(String doi, String titulo, String autor, int año, int numPags, boolean estado) {
+		this.doi = doi;
+		this.titulo = titulo;
+		this.autor = autor;
+		this.año = año;
+		this.numPags = numPags;
+		this.estado = estado;
+	}
 
+	// Getters y Setters
+	public String getDoi() {
+		return doi;
+	}
 
-    // Constructor con parámetros
-    public Articulo(String doi, String titulo, String autor, int año, int numPags, boolean estado) {
-        this.doi = doi;
-        this.titulo = titulo;
-        this.autor = autor;
-        this.año = año;
-        this.numPags = numPags;
-        this.estado = estado;
-    }
+	public void setDoi(String doi) {
+		this.doi = doi;
+	}
 
-    // Getters y Setters
-    public String getDoi() {
-        return doi;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public void setDoi(String doi) {
-        this.doi = doi;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public String getTitulo() {
-        return titulo;
-    }
+	public String getAutor() {
+		return autor;
+	}
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
 
-    public String getAutor() {
-        return autor;
-    }
+	public int getAño() {
+		return año;
+	}
 
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
+	public void setAño(int año) {
+		this.año = año;
+	}
 
-    public int getAño() {
-        return año;
-    }
+	public int getNumPags() {
+		return numPags;
+	}
 
-    public void setAño(int año) {
-        this.año = año;
-    }
+	public void setNumPags(int numPags) {
+		this.numPags = numPags;
+	}
 
-    public int getNumPags() {
-        return numPags;
-    }
+	public boolean isEstado() {
+		return estado;
+	}
 
-    public void setNumPags(int numPags) {
-        this.numPags = numPags;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 }

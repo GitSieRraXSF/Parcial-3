@@ -1,6 +1,4 @@
-/application/
 /controller/
-/data/
 /model/
-/style.css
-/view/
+/data/
+/application/
