@@ -2,7 +2,6 @@ package controller;
 
 import java.sql.Connection;
 import java.util.ArrayList;
-
 import application.Main;
 import data.AdminConnection;
 import data.ArticuloDAO;
